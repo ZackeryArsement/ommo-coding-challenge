@@ -90,12 +90,15 @@ const sensorData = (dataPoints) => {
 
         // we set the distances for each dimension to the accuracy and then plus minus a number based on the precision value
         let x = dimAccuracy[0] + Math.random()*dimPrecision[0]*2*precNeg;
+        x = Math.round(x*1000)/1000;
 
         precNeg =  Math.random() < 0.5 ? -1 : 1;
         let y = dimAccuracy[1] + Math.random()*dimPrecision[1]*2*precNeg;
+        y = Math.round(x*1000)/1000;
 
         precNeg =  Math.random() < 0.5 ? -1 : 1;
         let z = dimAccuracy[2] + Math.random()*dimPrecision[2]*2*precNeg;
+        z = Math.round(x*1000)/1000;
 
         data.push(`${x},${y},${z}`);
     }
@@ -157,7 +160,7 @@ db.once('open', async () => {
 
       // there is a chance to gain an additional 8 sensor data points in this calibration file
       for(let i=0; i<Math.floor(Math.random()*8); i++){
-        sensorArray.push(nonBaseSensor[Math.floor(Math.random()*30)])
+        sensorArray.push(nonBaseSensor[Math.floor(Math.random()*200)])
       }
 
       let sensorCalData = await SensorCalData.create({
@@ -188,7 +191,7 @@ db.once('open', async () => {
           let sensorId = sensorType + "-" + sensorNumb;
       
           const sensor = await Sensor.create({
-            sensor_unique_id: i+index+1,
+            sensor_unique_id: (i*3)+index+1,
             sensor_type: sensorId,
             sensor_data: data[0],
             accuracy: data[1],
@@ -273,6 +276,8 @@ db.once('open', async () => {
       // the remainder 25% use up to 4 algorithm versions
       else{
         for(let index=0; index<(Math.floor(Math.random()*3)+1); index++){
+          randomDate = new Date(sensorCalDataArray[i].calibration_date.getTime() + Math.random() * (new Date() - sensorCalDataArray[i].calibration_date.getTime()));
+          
           let sensorCalOutput = await SensorCalOutput.create({
             calibration_file: calibrationName,
             generation_date: randomDate,
@@ -293,7 +298,7 @@ db.once('open', async () => {
 
       // there can be up to 8 sensors in combination to the base sensor and a minimum of 3 additional sensors
       for(let sensorCount=0; sensorCount<(Math.floor(Math.random()*3)+5); sensorCount++){
-        let currentSensor = nonBaseSensor[Math.floor(Math.random()*nonBaseSensor.length)];
+        let currentSensor = nonBaseSensor[Math.floor(Math.random()*200)];
 
         comboSensors.push(currentSensor);
       }

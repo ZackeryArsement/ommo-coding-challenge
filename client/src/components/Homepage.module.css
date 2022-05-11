@@ -1,3 +1,39 @@
 .main{
     background-color: #343434;
+    min-height: 100vh;
+    padding-top: 5rem;
 }
+
+.inputCollection{
+    width: 1550px;
+    margin: auto;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dataTable{
+    border-radius: 10px;
+    width: 1550px;
+    margin: auto;
+    margin-top: 3rem;
+    background-color: #e1e1e1;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.loading{
+    padding: 1rem;
+    margin: 2rem auto;
+    font-size: 2rem;
+    width: 500px;
+    background-color: #a24f4f;
+    border-radius: 15px;
+    text-align: center;
+}
+

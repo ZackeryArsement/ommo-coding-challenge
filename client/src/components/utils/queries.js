@@ -68,7 +68,10 @@ export const QUERY_SENSOR = gql`
 query sensor {
     sensor {
         _id
+        sensor_unique_id
         sensor_type
+        accuracy
+        precision
     }
 }
 `
