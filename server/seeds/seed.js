@@ -206,7 +206,7 @@ db.once('open', async () => {
             precision: data[2],
             calibration_parameters: data[3]
           });
-          sleep(1000)
+          sleep(2000)
 
     
           baseSensor.push(sensor);
@@ -218,7 +218,7 @@ db.once('open', async () => {
           base_station_unique_id: baseStationUniqueId,
           sensors: baseSensor
         })
-        sleep(1000)
+        sleep(2000)
 
 
         baseCalDataArray.push(baseCalData);
@@ -242,7 +242,7 @@ db.once('open', async () => {
               precision: data[2],
               calibration_parameters: data[3]
             });
-            sleep(100)
+            sleep(2000)
       
             baseSensor.push(sensor);
           }
@@ -252,7 +252,7 @@ db.once('open', async () => {
             base_station_unique_id: baseStationUniqueId,
             sensors: baseSensor
           })
-          sleep(100)
+          sleep(2000)
 
           baseCalDataArray.push(baseCalData);
 
