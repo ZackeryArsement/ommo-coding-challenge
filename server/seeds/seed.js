@@ -206,7 +206,7 @@ db.once('open', async () => {
             precision: data[2],
             calibration_parameters: data[3]
           });
-          sleep(2000)
+          sleep(5000)
 
     
           baseSensor.push(sensor);
@@ -218,7 +218,7 @@ db.once('open', async () => {
           base_station_unique_id: baseStationUniqueId,
           sensors: baseSensor
         })
-        sleep(2000)
+        sleep(5000)
 
 
         baseCalDataArray.push(baseCalData);
@@ -242,7 +242,7 @@ db.once('open', async () => {
               precision: data[2],
               calibration_parameters: data[3]
             });
-            sleep(2000)
+            sleep(5000)
       
             baseSensor.push(sensor);
           }
@@ -252,7 +252,7 @@ db.once('open', async () => {
             base_station_unique_id: baseStationUniqueId,
             sensors: baseSensor
           })
-          sleep(2000)
+          sleep(5000)
 
           baseCalDataArray.push(baseCalData);
 
@@ -287,7 +287,7 @@ db.once('open', async () => {
           algorithm_version: `${Math.floor(Math.random())+1}.${Math.floor(Math.random()*3)}.${Math.floor(Math.random()*5)}`,
           sensors: sensorsUsed
         })
-        sleep(100)
+        sleep(5000)
       }
       // the remainder 25% use up to 4 algorithm versions
       else{
@@ -300,7 +300,7 @@ db.once('open', async () => {
             algorithm_version: `${Math.floor(Math.random())+1}.${Math.floor(Math.random()*3)}.${Math.floor(Math.random()*5)}`,
             sensors: sensorsUsed
           })
-          sleep(100)
+          sleep(5000)
 
         }
       }
@@ -327,7 +327,8 @@ db.once('open', async () => {
         base_station_unique_id: baseId,
         sensors: comboSensors
       })
-      sleep(100)
+      sleep(5000)
+
 
       comboSensors = [];
     }
