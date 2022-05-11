@@ -133,7 +133,8 @@ db.once('open', async () => {
 
     // we will create 200 non-base sensors... these will be pulled into the sensor calibration data
     for(let i=0; i<200; i++){
-      let data = sensorData(5000);
+      // let data = sensorData(5000);
+      let data = sensorData(10000);
 
       let sensorType = Object.keys(sensorIdMap)[Math.floor(Math.random()*(Object.keys(sensorIdMap).length-1))];
       sensorIdMap[sensorType] = sensorIdMap[sensorType] + 1 || 1
@@ -192,7 +193,9 @@ db.once('open', async () => {
         let randomDate = new Date(new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()));
 
         for(let index=0; index<3; index++){
-          let data = sensorData(10000);
+          // let data = sensorData(10000);
+          let data = sensorData(100000);
+
   
           let sensorNumb = sensorIdMap[sensorType];
           let sensorId = sensorType + "-" + sensorNumb;
@@ -228,7 +231,8 @@ db.once('open', async () => {
           let randomDate = new Date(new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()));
 
           for(let index=0; index<3; index++){
-            let data = sensorData(33000);
+            // let data = sensorData(33000);
+            let data = sensorData(100000);
   
             let sensorNumb = sensorIdMap[sensorType];
             let sensorId = sensorType + "-" + sensorNumb;
