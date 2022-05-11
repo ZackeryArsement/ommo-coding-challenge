@@ -111,6 +111,11 @@ const sensorData = (dataPoints) => {
     return [data, accuracy, precision, calibrationParamters]
 }
 
+// server crashes when seeding... have to implement pauses to reduce serge
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 db.once('open', async () => {
   try {
     await Sensor.deleteMany({});
@@ -144,6 +149,7 @@ db.once('open', async () => {
         precision: data[2],
         calibration_parameters: data[3]
       });
+      sleep(100)
 
       nonBaseSensor.push(sensor);
     }
@@ -168,6 +174,8 @@ db.once('open', async () => {
         calibration_date: randomDate,
         sensors: sensorArray
       })
+      sleep(100)
+
 
       sensorCalDataArray.push(sensorCalData);
     }
@@ -198,6 +206,8 @@ db.once('open', async () => {
             precision: data[2],
             calibration_parameters: data[3]
           });
+          sleep(100)
+
     
           baseSensor.push(sensor);
           baseSensorArray.push(sensor);
@@ -208,6 +218,8 @@ db.once('open', async () => {
           base_station_unique_id: baseStationUniqueId,
           sensors: baseSensor
         })
+        sleep(100)
+
 
         baseCalDataArray.push(baseCalData);
       } 
@@ -230,6 +242,7 @@ db.once('open', async () => {
               precision: data[2],
               calibration_parameters: data[3]
             });
+            sleep(100)
       
             baseSensor.push(sensor);
           }
@@ -239,6 +252,8 @@ db.once('open', async () => {
             base_station_unique_id: baseStationUniqueId,
             sensors: baseSensor
           })
+          sleep(100)
+
           baseCalDataArray.push(baseCalData);
 
           baseSensor = []
@@ -272,18 +287,21 @@ db.once('open', async () => {
           algorithm_version: `${Math.floor(Math.random())+1}.${Math.floor(Math.random()*3)}.${Math.floor(Math.random()*5)}`,
           sensors: sensorsUsed
         })
+        sleep(100)
       }
       // the remainder 25% use up to 4 algorithm versions
       else{
         for(let index=0; index<(Math.floor(Math.random()*3)+1); index++){
           randomDate = new Date(sensorCalDataArray[i].calibration_date.getTime() + Math.random() * (new Date() - sensorCalDataArray[i].calibration_date.getTime()));
-          
+
           let sensorCalOutput = await SensorCalOutput.create({
             calibration_file: calibrationName,
             generation_date: randomDate,
             algorithm_version: `${Math.floor(Math.random())+1}.${Math.floor(Math.random()*3)}.${Math.floor(Math.random()*5)}`,
             sensors: sensorsUsed
           })
+          sleep(100)
+
         }
       }
     }
@@ -309,6 +327,7 @@ db.once('open', async () => {
         base_station_unique_id: baseId,
         sensors: comboSensors
       })
+      sleep(100)
 
       comboSensors = [];
     }
