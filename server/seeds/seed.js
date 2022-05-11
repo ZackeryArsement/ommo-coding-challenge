@@ -149,7 +149,7 @@ db.once('open', async () => {
         precision: data[2],
         calibration_parameters: data[3]
       });
-      sleep(100)
+      sleep(500)
 
       nonBaseSensor.push(sensor);
     }
@@ -174,8 +174,7 @@ db.once('open', async () => {
         calibration_date: randomDate,
         sensors: sensorArray
       })
-      sleep(100)
-
+      sleep(500)
 
       sensorCalDataArray.push(sensorCalData);
     }
