@@ -1,0 +1,34 @@
+{
+  "name": "coding-challenge",
+  "version": "1.0.0",
+  "description": "Ommo-Coding-Challenge",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm run start",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "CI=false && cd client && npm run build",
+    "heroku-postbuild": "CI=false && cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZackeryArsement/ommo-coding-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZackeryArsement/ommo-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/ZackeryArsement/ommo-coding-challenge#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^16.0.0",
+    "http-proxy-middleware": "^2.0.4"
+  },
+  "dependencies": {
+    "gapi-script": "^1.2.0",
+    "concurrently": "^7.0.0"
+  }
+}
