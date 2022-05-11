@@ -193,7 +193,7 @@ db.once('open', async () => {
         let randomDate = new Date(new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()));
 
         for(let index=0; index<3; index++){
-          let data = sensorData(33000);
+          let data = sensorData(10000);
   
           let sensorNumb = sensorIdMap[sensorType];
           let sensorId = sensorType + "-" + sensorNumb;
