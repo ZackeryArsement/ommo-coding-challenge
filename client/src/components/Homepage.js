@@ -78,6 +78,13 @@ const Homepage = () => {
         }
     }, [loadSensors])
 
+    console.log(sensorCalData)
+    console.log(baseCalData)
+    console.log(sensorCalOutput)
+    console.log(performanceValOutput)
+    console.log(sensors)
+
+
 
     const searchData = () => {
         let tempFiltered;
