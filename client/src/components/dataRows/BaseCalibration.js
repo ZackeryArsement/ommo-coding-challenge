@@ -16,6 +16,17 @@ const BaseCalibration = ({data}) =>{
     const [showSensors, setShowSensors] = useState(false);
     const [showData, setShowData] = useState();
 
+    let dataSliceIndexArray = [];
+    let columnNumb = 3
+
+    for(let i = 0; i<columnNumb; i++){
+        let columnLength = Math.round((data.sensors[0].sensor_data.length/3));
+        let endSliceIndex = columnLength*(i+1) + 1
+
+        // We create an array of where to slice the sensor data for when we create multiple columns of data
+        dataSliceIndexArray[i] = [i*columnLength,endSliceIndex];
+    }
+
     let calibrationDate = month + '/' + day + '/' + year
     return (
         <div>
@@ -73,12 +84,48 @@ const BaseCalibration = ({data}) =>{
                             </div>
 
                             {showData === index ? (
-                                    <div className={classes.sensorData}>
-                                        {sensor.sensor_data.map((data,index)=>(
-                                            <div key={index}>{index}: [{data}]</div>
-                                        ))}
-                                    </div>
-                                ): (null)}
+                                <div className={classes.sensorData}>
+                                    {/* We create multiple columns to display our data */}
+                                    {dataSliceIndexArray.map((sliceData, columnIndex) =>(
+                                        <div key={columnIndex} className={classes.dataColumn}>
+                                            <div className={classes.dataHeader}>
+                                                <div className={classes.dataIndex}>
+                                                    Index
+                                                </div>
+                                                <div className={classes.dataPosHeader}>
+                                                    X
+                                                </div>
+                                                <div className={classes.dataPosHeader}>
+                                                    Y
+                                                </div>
+                                                <div className={classes.dataPosHeader}>
+                                                    Z
+                                                </div>
+                                            </div>
+
+                                            {/* Every column will loop through all of that */}
+                                            {sensor.sensor_data.slice(sliceData[0], sliceData[1]).map((data,dataIndex)=>(
+                                                <div key={dataIndex} className={classes.dataPoint}>
+                                                    <div className={classes.dataIndex}>
+                                                        {sliceData[0]+(dataIndex+1)}:
+                                                    </div>
+                                                    <div className={classes.dataData}>
+                                                        <div className={classes.dataPosValue}>
+                                                            {data.split(',')[0]}
+                                                        </div>
+                                                        <div className={classes.dataPosValue}>
+                                                            {data.split(',')[1]}
+                                                        </div>
+                                                        <div className={classes.dataPosValue}>
+                                                            {data.split(',')[2]}
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            ): (null)}
                         </div>
                     ))}
                 </div>

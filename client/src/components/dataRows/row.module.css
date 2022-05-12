@@ -16,4 +16,34 @@
     padding: 0.5rem;
     background-color: #9d9d9d;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dataPoint{
+    display: flex;
+}
+
+.dataIndex{
+    width: 40px;
+    margin-right: 5px;
+}
+
+.dataData{
+    display: flex;
+}
+
+.dataPosValue{
+    width: 60px;
+    text-align: center;
+}
+
+.dataHeader{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.dataPosHeader{
+    width: 60px;
+    text-align: center;
 }
