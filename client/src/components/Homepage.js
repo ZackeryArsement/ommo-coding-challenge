@@ -78,6 +78,8 @@ const Homepage = () => {
         }
     }, [loadSensors])
 
+    console.log(sensorCalData)
+
     const searchData = () => {
         let tempFiltered;
 

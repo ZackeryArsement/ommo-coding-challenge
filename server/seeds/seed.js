@@ -94,11 +94,11 @@ const sensorData = (dataPoints) => {
 
         precNeg =  Math.random() < 0.5 ? -1 : 1;
         let y = dimAccuracy[1] + Math.random()*dimPrecision[1]*2*precNeg;
-        y = Math.round(x*1000)/1000;
+        y = Math.round(y*1000)/1000;
 
         precNeg =  Math.random() < 0.5 ? -1 : 1;
         let z = dimAccuracy[2] + Math.random()*dimPrecision[2]*2*precNeg;
-        z = Math.round(x*1000)/1000;
+        z = Math.round(z*1000)/1000;
 
         data.push(`${x},${y},${z}`);
     }
