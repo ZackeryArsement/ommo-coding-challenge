@@ -18,7 +18,7 @@ const SensorData = ({data}) =>{
     let dataSliceIndexArray = [];
     let columnNumb = 3
 
-    if(data.sensors[0].sensor_data){
+    if(data.sensors[0] > 2){
         for(let i = 0; i<columnNumb; i++){
             let columnLength = Math.round((data.sensors[0].sensor_data.length/3));
             let endSliceIndex = columnLength*(i+1) + 1
