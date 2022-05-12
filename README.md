@@ -31,3 +31,18 @@ npm run develop
 ```
 
 
+# Notice
+
+The deployed application does not have 10,000/100,000 data sets per each sensor. The heroku server could not hold up that large amount of data seeding. The deployed application is a quick an easy way to play around with the application and also show how the application works when not on a local computer.
+
+# Technologies
+
+<a href="https://reactjs.org/" target="_blank"><img align="center" src="./images/atom.png" height="100" /></a>
+<a href="https://www.mongodb.com/" target="_blank"><img align="center" src="./images/mongodb.png" height="100" /></a>
+<a href="https://www.javascript.com/" target="_blank"><img align="center" src="./images/java-script.png" height="100" /></a>
+<a href="https://nodejs.org/en/" target="_blank"><img align="center" src="./images/nodejs.png" height="100" /></a>
+<a href="https://html.com/" target="_blank"><img align="center" src="./images/html-5.png" height="100" /></a>
+<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><img align="center" src="./images/css.png" height="100" /></a>
+<a href="https://expressjs.com/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/express.png" height="100" /></a>
+<a href="https://www.apollographql.com/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/apollo.png" height="100" /></a>
+<a href="https://graphql.org/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/graphql.png" height="100" /></a>
