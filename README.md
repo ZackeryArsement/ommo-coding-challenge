@@ -46,3 +46,5 @@ The deployed application does not have 10,000/100,000 data sets per each sensor.
 <a href="https://expressjs.com/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/express.png" height="100" /></a>
 <a href="https://www.apollographql.com/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/apollo.png" height="100" /></a>
 <a href="https://graphql.org/" target="_blank" style="font-size: 6rem;"><img align="center" src="./images/graphql.png" height="100" /></a>
+
+:D
