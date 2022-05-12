@@ -15,7 +15,7 @@ If this does not work then go into the individual client and server folders and 
 npm install
 ```
 
-Next, while still in the main folder, you need to build an optimized version of your fron end so run:
+Next, while still in the main folder, you need to build an optimized version of your from end so run:
 ```
 npm run build
 ```
@@ -33,7 +33,7 @@ npm run develop
 
 # Notice
 
-The deployed application does not have 10,000/100,000 data sets per each sensor. The heroku server could not hold up that large amount of data seeding. The deployed application is a quick an easy way to play around with the application and also show how the application works when not on a local computer.
+The deployed application does not have 10,000/100,000 data sets per each sensor. The heroku server could not hold up that large amount of data seeding. The deployed application is a quick and easy way to play around with the application and also show how the application works when not on a local computer.
 
 # Technologies
 

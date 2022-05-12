@@ -51,37 +51,33 @@ const Homepage = () => {
     useEffect(() => {
         if(!loadSensorCalData){
             setSensorCalData(dataSensorCalData.sensorCalData)
-            console.log(sensorCalData)
         }
     }, [loadSensorCalData])
 
     useEffect(() => {
         if(!loadBaseCalData){
             setBaseCalData(dataBaseCalData.baseCalData)
-            console.log(baseCalData)
         }
     }, [loadBaseCalData])
 
     useEffect(() => {
         if(!loadSensorCalOutput){
             setSensorCalOutput(dataSensorCalOutput.sensorCalOutput)
-            console.log(sensorCalOutput)
         }
     }, [loadSensorCalOutput])
 
     useEffect(() => {
         if(!loadPerformanceValOutput){
             setPerformanceValOutput(dataPerformanceValOutput.performanceValOutput)
-            console.log(performanceValOutput)
         }
     }, [loadPerformanceValOutput])
 
     useEffect(() => {
         if(!loadSensors){
             setSensors(dataSensors.sensor)
-            console.log(sensors)
         }
     }, [loadSensors])
+
 
     const searchData = () => {
         let tempFiltered;
@@ -502,17 +498,17 @@ const Homepage = () => {
                     </div>
                 </div>
 
-                <button style={{marginLeft:'750px', marginTop:'2rem'}} onClick={() => searchData()}>Search</button>
+                <button className={classes.button} onClick={() => searchData()}>Search</button>
             </div>
 
-            <div  className={classes.dataTable}>
-                <div>Filtered Data</div>
+            <div className={classes.dataTable}>
+                <div className={classes.filterTitle}>Filtered Data</div>
                 {filteredData.length > 0 ? (
                 <div>
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
                     {dataSet === 'Sensor Calibration Data' ? (
                         filteredData.map((dataFile, index) => (
-                            <div key={index}>
+                            <div key={index} className={classes.transitionHeight}>
                                 <SensorData data={dataFile}/>
                             </div>
                         ))
@@ -520,7 +516,7 @@ const Homepage = () => {
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
                     {dataSet === 'Base Station Calibration Data' ? (
                         filteredData.map((dataFile, index) => (
-                            <div key={index}>
+                            <div key={index} className={classes.transitionHeight}>
                                 <BaseCalibration data={dataFile}/>
                             </div>
                         ))
@@ -528,7 +524,7 @@ const Homepage = () => {
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
                     {dataSet === 'Sensor Calibration Output' ? (
                         filteredData.map((dataFile, index) => (
-                            <div key={index}>
+                            <div key={index} className={classes.transitionHeight}>
                                 <SensorOutput data={dataFile}/>
                             </div>
                         ))
@@ -536,7 +532,7 @@ const Homepage = () => {
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
                     {dataSet === 'Performance Validation Output' ? (
                         filteredData.map((dataFile, index) => (
-                            <div key={index}>
+                            <div key={index} className={classes.transitionHeight}>
                                 <PerformanceOutput data={dataFile}/>
                             </div>
                         ))
@@ -544,7 +540,7 @@ const Homepage = () => {
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
                     {dataSet === 'All' ? (
                         filteredData.map((dataFile, index) => (
-                            <div key={index}>
+                            <div key={index} className={classes.transitionHeight}>
                                 <Sensors data={dataFile}/>
                             </div>
                         ))
