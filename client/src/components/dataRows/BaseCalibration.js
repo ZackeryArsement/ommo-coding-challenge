@@ -19,12 +19,14 @@ const BaseCalibration = ({data}) =>{
     let dataSliceIndexArray = [];
     let columnNumb = 3
 
-    for(let i = 0; i<columnNumb; i++){
-        let columnLength = Math.round((data.sensors[0].sensor_data.length/3));
-        let endSliceIndex = columnLength*(i+1) + 1
-
-        // We create an array of where to slice the sensor data for when we create multiple columns of data
-        dataSliceIndexArray[i] = [i*columnLength,endSliceIndex];
+    if(data.sensors[0].sensor_data){
+        for(let i = 0; i<columnNumb; i++){
+            let columnLength = Math.round((data.sensors[0].sensor_data.length/3));
+            let endSliceIndex = columnLength*(i+1) + 1
+    
+            // We create an array of where to slice the sensor data for when we create multiple columns of data
+            dataSliceIndexArray[i] = [i*columnLength,endSliceIndex];
+        }
     }
 
     let calibrationDate = month + '/' + day + '/' + year

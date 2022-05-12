@@ -84,8 +84,6 @@ const Homepage = () => {
     console.log(performanceValOutput)
     console.log(sensors)
 
-
-
     const searchData = () => {
         let tempFiltered;
 
