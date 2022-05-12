@@ -10,6 +10,11 @@ First you must go into you main folder of your project and run:
 npm install
 ```
 
+If this does not work then go into the individual client and server folders and run the following code while in both folder directories:
+```
+npm install
+```
+
 Next, while still in the main folder, you need to build an optimized version of your fron end so run:
 ```
 npm run build
